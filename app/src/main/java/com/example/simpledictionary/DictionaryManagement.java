@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class DictionaryManagement {
     public static ArrayList<String> dictionarySearchAdvanced(String inputWord) {
         ArrayList<String> result = new ArrayList<>();
-        for (int i = 0; i < Dictionary.wordsAdvanced.size(); i++) {
-            String strTarget = Dictionary.wordsAdvanced.get(i).getWord_target();
+        for (int i = 0; i < Dictionary.words.size(); i++) {
+            String strTarget = Dictionary.words.get(i).getWord_target();
             if (strTarget.length() >= inputWord.length()) {
                 if (inputWord.equals(strTarget.substring(0, inputWord.length()))) {
                     result.add(strTarget);
@@ -18,10 +18,10 @@ public class DictionaryManagement {
 
     public static ArrayList<String> AdvancedExplain(String str) {
         ArrayList<String> result = new ArrayList<>();
-        for (int i = 0; i < Dictionary.wordsAdvanced.size(); i++) {
-            if (Dictionary.wordsAdvanced.get(i).getWord_target().equals(str)) {
-                result.add(Dictionary.wordsAdvanced.get(i).getWord_explain());
-                result.add(Dictionary.wordsAdvanced.get(i).getWord_pronun());
+        for (int i = 0; i < Dictionary.words.size(); i++) {
+            if (Dictionary.words.get(i).getWord_target().equals(str)) {
+                result.add(Dictionary.words.get(i).getWord_explain());
+                result.add(Dictionary.words.get(i).getWord_pronun());
                 return result;
             }
         }

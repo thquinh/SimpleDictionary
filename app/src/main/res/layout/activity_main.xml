@@ -7,38 +7,45 @@
     tools:context=".MainActivity">
 
     <SearchView
-        android:id="@+id/search_bar"
-        style="@android:style/Widget.Material.Light.SearchView"
+        android:id="@+id/search_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:queryHint="Type here to search..."
-        app:layout_constraintBottom_toTopOf="@+id/menuFragment"
+        android:iconifiedByDefault="false"
+        app:layout_constraintBottom_toTopOf="@+id/frag_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/explainFragment"
-        class="com.example.simpledictionary.ExplainFragment"
-        android:visibility="invisible"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/search_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout="@layout/fragment_explain">
-    </androidx.fragment.app.FragmentContainerView>
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/explainFragment"-->
+<!--        class="com.example.simpledictionary.ExplainFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/search_word"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:layout="@layout/fragment_explain">-->
+<!--    </androidx.fragment.app.FragmentContainerView>-->
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/menuFragment"
-        class="com.example.simpledictionary.MenuFragment"
+        android:id="@+id/frag_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_menu">
+        app:layout_constraintTop_toBottomOf="@id/search_word">
 
     </androidx.fragment.app.FragmentContainerView>
+
+    <ListView
+        android:id="@+id/list_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="400dp"
+        android:dividerHeight="1dp"
+        android:divider="#666"
+        app:layout_constraintTop_toBottomOf="@id/search_word"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/menuFragment"
+    android:id="@+id/menu_frag"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".MenuFragment">
+    tools:context=".MainActivity"
+    android:paddingTop="20dp">
 
     <!-- TODO: Update blank fragment layout -->
 

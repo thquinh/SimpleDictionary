@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/explainFragment"
+    android:id="@+id/explain_frag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:visibility="invisible"
-    tools:context=".ExplainFragment">
+    tools:context=".ExplainFragment"
+    android:paddingHorizontal="20dp"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/word_target_ex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/word_pronun_ex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/ei, ə/"
+        android:textSize="15dp"
+        android:textColor="#00f"
+       />
+
+    <TextView
+        android:id="@+id/word_explain_ex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually."
+        android:textSize="18dp"
+        android:justificationMode="inter_word"
+        />
 
 </LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F51B5"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/ic_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/word_target"
+        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+
+    <TextView
+        android:id="@+id/word_target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a"
+        android:textSize="19dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ic_search"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/word_pronun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/ei, ə/"
+        android:textColor="#fff"
+        app:layout_constraintTop_toBottomOf="@id/word_target"
+        app:layout_constraintStart_toEndOf="@id/ic_search"/>
+
+    <TextView
+        android:id="@+id/word_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*  danh từ,  số nhiều as,  a's"
+        android:textColor="#fff"
+        app:layout_constraintTop_toBottomOf="@id/word_pronun"
+        app:layout_constraintStart_toEndOf="@id/ic_search"/>
+
+    <ImageView
+        android:id="@+id/ic_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/word_target"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

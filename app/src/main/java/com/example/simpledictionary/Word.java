@@ -1,9 +1,17 @@
 package com.example.simpledictionary;
 
-public class Word {
+import java.io.Serializable;
+
+public class Word implements Serializable {
     private String word_target;
     private String word_explain;
     private String word_pronun;
+
+    public Word() {
+        this.word_explain = "";
+        this.word_pronun = "";
+        this.word_target = "";
+    }
 
     public String getWord_target() {
         return word_target;

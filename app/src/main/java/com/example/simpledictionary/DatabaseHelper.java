@@ -6,6 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.io.OutputStream;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static String DB_PATH;
-    private static String DB_NAME = "evdictionary.db";
+    private static String DB_NAME = "evdict";
     private SQLiteDatabase dbObj;
     private final Context context;
 
@@ -40,22 +41,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             checkDB = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READONLY);
             if (checkDB!=null)
             {
-                Cursor c= checkDB.rawQuery("SELECT * FROM bank", null);
+                Cursor c= checkDB.rawQuery("SELECT * FROM evdict", null);
                 c.moveToFirst();
                 String contents[]=new String[80];
                 int flag=0;
 
                 while(! c.isAfterLast())
                 {
-                    String temp="";
-                    String s2=c.getString(0);
-                    String s3=c.getString(1);
-                    String s4=c.getString(2);
-                    temp=temp+"\n Id:"+s2+"\tType:"+s3+"\tBal:"+s4;
-                    contents[flag]=temp;
-                    flag=flag+1;
+                    String temp = "Word[" +
+                            "word_target='" + c.getString(0) + '\'' +
+                            ", word_pronun='" + c.getString(1) + '\'' +
+                            ", word_explain='" + c.getString(2) + '\'' +
+                            ']';
 
-//                    Log.i("DB values.........",temp);
+                    Log.i("DB values.........",temp);
                     c.moveToNext();
 
                 }
@@ -79,24 +78,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void copyDB() throws IOException{
         try {
-//            Log.i("inside copyDB....................","start");
+            Log.i("inside copyDB....................","start");
 
             InputStream ip =  context.getAssets().open(DB_NAME+".db");
-//            Log.i("Input Stream....",ip+"");
+            Log.i("Input Stream....",ip+"");
             String op=  DB_PATH  +  DB_NAME ;
             OutputStream output = new FileOutputStream( op);
             byte[] buffer = new byte[1024];
             int length;
             while ((length = ip.read(buffer))>0){
                 output.write(buffer, 0, length);
-//                Log.i("Content.... ",length+"");
+                Log.i("Content.... ",length+"");
             }
             output.flush();
             output.close();
             ip.close();
         }
         catch (IOException e) {
-//            Log.v("error", e.toString());
+            Log.v("error", e.toString());
         }
     }
 
@@ -104,7 +103,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String myPath = DB_PATH + DB_NAME;
         dbObj = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
-//        Log.i("open DB......",dbObj.toString());
+        Log.i("open DB......",dbObj.toString());
     }
 
     @Override
