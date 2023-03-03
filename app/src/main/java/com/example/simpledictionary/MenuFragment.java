@@ -27,7 +27,7 @@ public class MenuFragment extends Fragment {
         transPara = (Button) menu.findViewById(R.id.btn_transpara);
         transPara.setOnClickListener(view -> {
             Log.i("start act", "translatre para");
-            ((MainActivity) getActivity()).startActivity(new Intent(getActivity(), TranslateParaActivity.class));
+            getActivity().startActivity(new Intent(getActivity(), TranslateParaActivity.class));
         });
 
         return menu;

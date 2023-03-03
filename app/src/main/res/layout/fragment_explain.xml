@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/explain_frag"
     android:layout_width="match_parent"
@@ -10,23 +11,40 @@
     >
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/word_target_ex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="a"
-        android:textSize="26dp"
-        android:textColor="#444"
-        />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/word_pronun_ex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="/ei, ə/"
-        android:textSize="18dp"
-        android:textColor="#00f"
-       />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/word_target_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="a"
+                android:textColor="#444"
+                android:textSize="26dp" />
+
+            <TextView
+                android:id="@+id/word_pronun_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/ei, ə/"
+                android:textColor="#00f"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_speak"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_speaker" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -34,6 +52,7 @@
         android:scrollbars="none"
         android:fillViewport="true"
         android:layout_marginTop="20dp">
+
 
         <TextView
             android:id="@+id/word_explain_ex"

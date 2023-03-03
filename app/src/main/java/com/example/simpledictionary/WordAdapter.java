@@ -60,7 +60,8 @@ public class WordAdapter extends BaseAdapter {
                         w.setWord_target(strTarget);
                         w.setWord_pronun(Dictionary.words.get(i).getWord_pronun());
                         w.setWord_explain(Dictionary.words.get(i).getWord_explain());
-                        result.add(w);
+                        if (result.size() < 10) result.add(w);
+                        else break;
                     }
                 }
             }
