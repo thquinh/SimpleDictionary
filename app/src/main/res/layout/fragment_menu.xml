@@ -16,27 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="50dp"
         android:text="Translate paragraphs"
-        android:textAlignment="textStart"
         app:icon="?android:attr/actionModeFindDrawable" />
 
-    <Button
-        android:id="@+id/btn_fav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:text="Favorite words"
-        android:textAlignment="textStart"
-        app:icon="@android:drawable/btn_star_big_off" />
-
-
-    <Button
-        android:id="@+id/btn_setting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:text="Settings"
-        android:textAlignment="textStart"
-        app:icon="@android:drawable/ic_lock_idle_lock" />
 
 </LinearLayout>

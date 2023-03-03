@@ -39,13 +39,10 @@ public class MainActivity extends AppCompatActivity {
         wordList = (ListView) findViewById(R.id.list_word);
         wordAdapter = new WordAdapter(getApplicationContext(), new ArrayList<>());
         wordList.setAdapter(wordAdapter);
-        wordList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                goToExplain((Word) wordAdapter.getItem(i));
-                searchWord.setQuery("", false);
-                searchWord.clearFocus();
-            }
+        wordList.setOnItemClickListener((adapterView, view, i, l) -> {
+            goToExplain((Word) wordAdapter.getItem(i));
+            searchWord.setQuery("", false);
+            searchWord.clearFocus();
         });
 
         searchWord = (SearchView) findViewById(R.id.search_word);
@@ -100,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             Dictionary.words.add(w);
             c.moveToNext();
         }
+        db.close();
+        db1.close();
     }
 
     public void goToExplain(Word w) {
@@ -109,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         ex.setArguments(bundle);
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frag_layout, ex);
+        fragmentTransaction.addToBackStack("e");
         fragmentTransaction.commit();
     }
 }

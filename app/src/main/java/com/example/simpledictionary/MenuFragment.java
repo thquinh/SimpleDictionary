@@ -13,8 +13,7 @@ import android.widget.Button;
 
 public class MenuFragment extends Fragment {
     Button transPara;
-    Button settings;
-    Button favWords;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,27 +25,11 @@ public class MenuFragment extends Fragment {
         View menu = inflater.inflate(R.layout.fragment_menu, container, false);
 
         transPara = (Button) menu.findViewById(R.id.btn_transpara);
-        transPara.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i("start act", "translatre para");
-                ((MainActivity) getActivity()).startActivity(new Intent(getActivity(), TranslateParaActivity.class));
-            }
+        transPara.setOnClickListener(view -> {
+            Log.i("start act", "translatre para");
+            ((MainActivity) getActivity()).startActivity(new Intent(getActivity(), TranslateParaActivity.class));
         });
-        settings = (Button) menu.findViewById(R.id.btn_setting);
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity) getActivity()).startActivity(new Intent(getActivity(), TranslateParaActivity.class));
-            }
-        });
-        favWords = (Button) menu.findViewById(R.id.btn_fav);
-        favWords.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity) getActivity()).startActivity(new Intent(getActivity(), TranslateParaActivity.class));
-            }
-        });
+
         return menu;
     }
 }

@@ -34,7 +34,7 @@ public class ExplainFragment extends Fragment {
         }
         wordTarget.setText(w.getWord_target());
         wordPronun.setText(w.getWord_pronun());
-        wordExplain.setText(w.getWord_explain().replace("=", " "));
+        wordExplain.setText(w.getWord_explain().replace("=", " ").substring(1));
         return view;
     }
 }

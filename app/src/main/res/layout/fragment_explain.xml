@@ -15,7 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="a"
-        android:textSize="25dp"
+        android:textSize="26dp"
+        android:textColor="#444"
         />
 
     <TextView
@@ -23,17 +24,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/ei, ə/"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:textColor="#00f"
        />
 
-    <TextView
-        android:id="@+id/word_explain_ex"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually."
-        android:textSize="18dp"
-        android:justificationMode="inter_word"
-        />
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_marginTop="20dp">
 
+        <TextView
+            android:id="@+id/word_explain_ex"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:justificationMode="inter_word"
+            android:text="*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually.*  danh từ,  số nhiều as,  a'sAfter downloading an Android keyboard—or even more than one—launch it to complete the installation. Most apps walk you through the process of enabling a keyboard and setting it as the default, but it's also easy to do so manually."
+            android:textColor="#444"
+            android:textSize="20dp" />
+    </ScrollView>
 </LinearLayout>
